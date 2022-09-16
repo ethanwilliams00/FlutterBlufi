@@ -507,10 +507,16 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     @Override
     public void onReceiveCustomData(BlufiClient client, int status, byte[] data) {
       if (status == STATUS_SUCCESS) {
-        String customStr = new String(data);
-          customStr = customStr.replace("\"","\\\"");
+        String str = ' ';
+        for (int i = 0; i < data.length; i++) {
+          int foo = data[i];
+          str += foo;
+          str += ' ';
+        }
+        // String customStr = new String(data);
+        // customStr = customStr.replace("\"","\\\"");
 //        updateMessage(String.format("Receive custom data:\n%s", customStr));
-        updateMessage(makeJson("receive_device_custom_data",customStr));
+        updateMessage(makeJson("receive_device_custom_data",str));
       } else {
         updateMessage(makeJson("receive_device_custom_data","0"));
 //        updateMessage("Receive custom data error, code=" + status);
