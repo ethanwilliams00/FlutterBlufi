@@ -507,11 +507,11 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     @Override
     public void onReceiveCustomData(BlufiClient client, int status, byte[] data) {
       if (status == STATUS_SUCCESS) {
-        String str = ' ';
+        String str = " ";
         for (int i = 0; i < data.length; i++) {
           int foo = data[i];
           str += foo;
-          str += ' ';
+          str += " ";
         }
         // String customStr = new String(data);
         // customStr = customStr.replace("\"","\\\"");
