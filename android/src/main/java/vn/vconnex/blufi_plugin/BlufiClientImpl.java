@@ -447,8 +447,8 @@ public class BlufiClientImpl implements BlufiParameter {
 
         int sequence = toInt(response[2]);
         if (sequence != (mReadSequence.incrementAndGet() & 0xff)) {
-            Log.w(TAG, "parseNotification read sequence wrong");
-            return -3;
+            // Log.w(TAG, "parseNotification read sequence wrong");
+            // return -3;
         }
 
         int type = toInt(response[0]);
