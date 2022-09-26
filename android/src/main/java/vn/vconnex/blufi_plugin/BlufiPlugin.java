@@ -289,9 +289,9 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
   /**
    * Try to post custom data
    */
-  private void postCustomData(String dataString) {
-    if (dataString != null) {
-      mBlufiClient.postCustomData(dataString.getBytes());
+  private void postCustomData(byte[] data) {
+    if (data != null) {
+      mBlufiClient.postCustomData(data);
     }
   }
 
