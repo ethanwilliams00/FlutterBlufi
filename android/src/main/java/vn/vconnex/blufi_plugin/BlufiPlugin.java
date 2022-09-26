@@ -173,7 +173,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
       requestDeviceWifiScan();
     }
     else if (call.method.equals("postCustomData")) {
-      Byte[] data = call.argument("custom_data");
+      byte[] data = call.argument("custom_data");
       postCustomData(data);
     }
     else {
