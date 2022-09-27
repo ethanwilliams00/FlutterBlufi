@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:ffi';
+import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
 
@@ -75,10 +76,7 @@ class BlufiPlugin {
   }
 
   Future postCustomData(List<int> data) async {
-    Array<Uint8> bytes = Array(data.length);
-    for (int i = 0; i < data.length; i++) {
-      bytes[i] = data[i];
-    }
+    Uint8List bytes = Uint8List.fromList(data);
     await _channel!.invokeMethod(
         'postCustomData', <String, dynamic>{'custom_data': bytes});
   }
