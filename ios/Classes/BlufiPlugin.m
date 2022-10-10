@@ -124,7 +124,7 @@
     }
 }
 
--(void)postCustomData:(byte[] *) data {
+-(void)postCustomData:(FlutterStandardTypedData *) data {
     
     if (_blufiClient && data != nil) {
         [_blufiClient postCustomData:data];
@@ -244,8 +244,8 @@
         NSString *customString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         customString =  " ";
         for (int i = 0; i < data.length; i++) {
-            int foo = data[i];
-            customString += foo;
+            int foo = data.bytes[i];
+            customString += [[NSString alloc] initWithFormat:@"%d", foo];
             customString += " ";
         }
         // customString = [customString stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
