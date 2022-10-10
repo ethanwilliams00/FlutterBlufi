@@ -242,11 +242,12 @@
 - (void)blufi:(BlufiClient *)client didReceiveCustomData:(NSData *)data status:(BlufiStatusCode)status {
     if (status == StatusSuccess) {
         NSString *customString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        customString =  " ";
-        for (int i = 0; i < data.length; i++) {
+        customString =  @" ";
+        int i;
+        for (i = 0; i < data.length; i++) {
             int foo = data.bytes[i];
             customString += [[NSString alloc] initWithFormat:@"%d", foo];
-            customString += " ";
+            customString += @" ";
         }
         // customString = [customString stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
            [self updateMessage:[self makeJsonWithCommand:@"receive_device_custom_data" data:customString]];
