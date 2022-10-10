@@ -243,9 +243,8 @@
     if (status == StatusSuccess) {
         // NSString *customString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSString *customString =  @" ";
-        int *i = 0;
-        for (i = 0; i < data.length; i++) {
-            customString = [NSString stringWithFormat:@"%@%c%@", customString, data.bytes[i], @" "];
+        for (int i = 0; i < data.length; i++) {
+            customString = [NSString stringWithFormat:@"%@%d%@", customString, data.bytes[i], @" "];
         }
         // customString = [customString stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
            [self updateMessage:[self makeJsonWithCommand:@"receive_device_custom_data" data:customString]];
