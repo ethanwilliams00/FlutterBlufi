@@ -245,7 +245,7 @@
         NSString *customString =  @" ";
         int *i = 0;
         for (i = 0; i < data.length; i++) {
-            customString = [NSString stringWithFormat:@"%@%d%@", customString, data.bytes[i], @" "];
+            customString = [NSString stringWithFormat:@"%@%d%@", customString, data[i], @" "];
         }
         // customString = [customString stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
            [self updateMessage:[self makeJsonWithCommand:@"receive_device_custom_data" data:customString]];
