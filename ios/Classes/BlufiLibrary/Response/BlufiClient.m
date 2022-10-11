@@ -396,8 +396,8 @@ enum {
     Byte sequence = buf[2];
     Byte expectSequence = (++_readSequence) & 0xff;
     if (sequence != expectSequence) {
-        NSLog(@"parseNotification invalid sequence");
-        return NotifyInvalidSequence;
+        // NSLog(@"parseNotification invalid sequence");
+        // return NotifyInvalidSequence;
     }
     
     Byte type = buf[0];
