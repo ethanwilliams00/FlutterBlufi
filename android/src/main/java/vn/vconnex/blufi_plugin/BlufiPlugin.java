@@ -357,7 +357,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     public void onServicesDiscovered(BluetoothGatt gatt, int status) {
       mLog.d(String.format(Locale.ENGLISH, "onServicesDiscovered status=%d", status));
       if (status != BluetoothGatt.GATT_SUCCESS) {
-        gatt.disconnect();
+        // gatt.disconnect();
         updateMessage(makeJson("discover_services","1"));
 //        updateMessage(String.format(Locale.ENGLISH, "Discover services error status %d", status));
       }
