@@ -357,7 +357,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     public void onServicesDiscovered(BluetoothGatt gatt, int status) {
       mLog.d(String.format(Locale.ENGLISH, "onServicesDiscovered status=%d", status));
       if (status != BluetoothGatt.GATT_SUCCESS) {
-        // gatt.disconnect();
+        gatt.disconnect();
         updateMessage(makeJson("discover_services","1"));
 //        updateMessage(String.format(Locale.ENGLISH, "Discover services error status %d", status));
       }
@@ -389,7 +389,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
                                BluetoothGattCharacteristic writeChar, BluetoothGattCharacteristic notifyChar) {
       if (service == null) {
         mLog.w("Discover service failed");
-        gatt.disconnect();
+        // gatt.disconnect();
 //        updateMessage("Discover service failed");
         updateMessage(makeJson("discover_service","0"));
         return;
