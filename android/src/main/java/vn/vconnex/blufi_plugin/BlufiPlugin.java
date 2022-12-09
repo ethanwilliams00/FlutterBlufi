@@ -392,7 +392,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
         // gatt.disconnect();
 //        updateMessage("Discover service failed");
         updateMessage(makeJson("discover_service","0"));
-        return;
+        // return;
       }
       if (writeChar == null) {
         mLog.w("Get write characteristic failed");
