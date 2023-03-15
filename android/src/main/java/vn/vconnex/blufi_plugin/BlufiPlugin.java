@@ -591,7 +591,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
       String name = scanResult.getDevice().getName();
 
       if (!TextUtils.isEmpty(mBlufiFilter)) {
-        if (name == null || !name.toLowerCase().contains(mBlufiFilter.toLowerCase())) {
+        if (name == null || !(name.toLowerCase().contains("nafx") || name.toLowerCase().contains("flex"))) {
           return;
         }
       }
